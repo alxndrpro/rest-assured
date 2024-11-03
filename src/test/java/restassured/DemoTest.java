@@ -3,7 +3,7 @@ package restassured;
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 
-public class demoTest {
+public class DemoTest {
 
     @Test
     void firstTest() {
