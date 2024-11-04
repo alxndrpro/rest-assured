@@ -2,9 +2,12 @@ package restassured;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+
 import static org.hamcrest.Matchers.*;
+
 import org.testng.annotations.Test;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class ValidatableResponseDemo {
@@ -30,6 +33,21 @@ public class ValidatableResponseDemo {
                 .time(lessThan(2L), TimeUnit.SECONDS)
                 .header("etag", notNullValue())
                 .header("etag", not(emptyString()));
+    }
+
+
+    Map<String, String> expectedHeaders = Map.of("content-encoding", "gzip",
+            "access-control-allow-origin", "*");
+
+    @Test
+    void usingMapsToTestHeaders() {
+        RestAssured.get(BASE_URL)
+                .then()
+                .headers(expectedHeaders)
+                .headers(
+                        "cache-control", containsString("public")
+                );
+
     }
 
 }
