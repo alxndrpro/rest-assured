@@ -1,6 +1,5 @@
-package restassured;
+package restassured.config;
 
-import groovy.util.logging.Log;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.Test;

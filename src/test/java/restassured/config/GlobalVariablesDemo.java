@@ -1,4 +1,4 @@
-package restassured;
+package restassured.config;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeSuite;

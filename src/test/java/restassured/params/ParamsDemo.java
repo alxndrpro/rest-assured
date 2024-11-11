@@ -1,10 +1,7 @@
-package restassured;
+package restassured.params;
 
 import io.restassured.RestAssured;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.util.Map;
 
 public class ParamsDemo {
 

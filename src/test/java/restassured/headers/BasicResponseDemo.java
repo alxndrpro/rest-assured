@@ -1,4 +1,4 @@
-package restassured;
+package restassured.headers;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;

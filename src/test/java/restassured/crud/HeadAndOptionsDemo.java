@@ -1,4 +1,4 @@
-package restassured;
+package restassured.crud;
 
 import io.restassured.RestAssured;
 import static org.hamcrest.Matchers.*;

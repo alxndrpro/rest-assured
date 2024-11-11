@@ -1,4 +1,4 @@
-package restassured;
+package restassured.config;
 
 import io.restassured.RestAssured;
 import io.restassured.config.FailureConfig;

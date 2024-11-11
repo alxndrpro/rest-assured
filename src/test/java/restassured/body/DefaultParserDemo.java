@@ -1,4 +1,4 @@
-package restassured;
+package restassured.body;
 
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;

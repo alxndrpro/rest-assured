@@ -1,4 +1,4 @@
-package restassured;
+package restassured.params;
 
 import io.restassured.RestAssured;
 import org.testng.Assert;
