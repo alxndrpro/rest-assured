@@ -1,8 +1,10 @@
 package restassured;
 
 import io.restassured.RestAssured;
+import io.restassured.config.FailureConfig;
 import io.restassured.config.RedirectConfig;
 import io.restassured.config.RestAssuredConfig;
+import io.restassured.listener.ResponseValidationFailureListener;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -21,6 +23,22 @@ public class ConfigDemo {
                 .statusCode(equalTo(200));
     }
 
+
+    @Test
+    void failureConfigExample() {
+
+        ResponseValidationFailureListener failureListener = (reqSpec, resSpec, response) ->
+                System.out.printf("We have a failure, " +
+                                "response status was %s and the body contained: %s",
+                        response.getStatusCode(), response.body().asPrettyString());
+
+        RestAssured.config = RestAssured.config().failureConfig(FailureConfig.failureConfig().failureListeners(failureListener));
+
+        RestAssured.get(BASE_URL + "users/alxndr.pro")
+                .then()
+                .body("some.path", equalTo("smth"))
+                .statusCode(equalTo(200));
+    }
 
 
 }
