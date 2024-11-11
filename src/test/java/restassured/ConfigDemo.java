@@ -2,8 +2,6 @@ package restassured;
 
 import io.restassured.RestAssured;
 import io.restassured.config.FailureConfig;
-import io.restassured.config.RedirectConfig;
-import io.restassured.config.RestAssuredConfig;
 import io.restassured.listener.ResponseValidationFailureListener;
 import org.testng.annotations.Test;
 
